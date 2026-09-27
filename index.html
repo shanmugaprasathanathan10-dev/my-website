@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1979,6 +1979,90 @@
 
   <script>
 
+const WEBHOOK_URL = "https://hook.eu1.make.com/mbwqnwfcbgo9z0taw07vl18q57uixcl2";
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", async function (e) {
+
+  e.preventDefault();
+
+  const submitButton =
+    contactForm.querySelector(".form-submit");
+
+  const originalText = submitButton.innerHTML;
+
+  submitButton.disabled = true;
+
+  submitButton.innerHTML = `
+    Sending...
+  `;
+
+  const formData = new FormData(contactForm);
+
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    company: formData.get("company"),
+    project_type: formData.get("project_type"),
+    budget: formData.get("budget"),
+    message: formData.get("message"),
+
+    source: "Shanmuga Prasath Portfolio",
+
+    submitted_at: new Date().toISOString()
+  };
+
+  try {
+
+    const response = await fetch(WEBHOOK_URL, {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify(data)
+
+    });
+
+    if (!response.ok) {
+      throw new Error("Webhook request failed");
+    }
+
+    submitButton.innerHTML = `
+      ✓ Enquiry Sent
+    `;
+
+    contactForm.reset();
+
+    setTimeout(() => {
+
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
+
+    }, 3000);
+
+  } catch (error) {
+
+    console.error(error);
+
+    submitButton.innerHTML = `
+      Something went wrong
+    `;
+
+    setTimeout(() => {
+
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
+
+    }, 3000);
+
+  }
+
+});
+
     /* Scroll reveal animation */
 
     const observer = new IntersectionObserver(
@@ -2046,4 +2130,3 @@
 
 </body>
 </html>
-```
