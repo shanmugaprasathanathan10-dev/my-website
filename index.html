@@ -1,11 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Shanmuga Prasath.A | GenAI Architect</title>
+  <title>Shanmuga Prasath | GenAI Architect</title>
 
   <meta
     name="description"
@@ -18,6 +18,7 @@
   />
 
   <meta name="author" content="Shanmuga Prasath" />
+  <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="Shanmuga Prasath | GenAI Architect" />
   <meta
@@ -35,9 +36,10 @@
   />
 
   <style>
+
     :root {
       --bg: #050505;
-      --bg2: #0b0b0b;
+      --bg2: #090909;
       --card: #101010;
       --border: rgba(255,255,255,0.09);
       --text: #f5f5f5;
@@ -69,6 +71,13 @@
       text-decoration: none;
     }
 
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
     .container {
       width: min(1180px, 92%);
       margin: auto;
@@ -82,7 +91,7 @@
       width: 100%;
       z-index: 1000;
       backdrop-filter: blur(18px);
-      background: rgba(5,5,5,0.72);
+      background: rgba(5,5,5,0.75);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
@@ -151,6 +160,7 @@
         linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 70px 70px;
       mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
     }
 
     .orb {
@@ -160,13 +170,15 @@
       right: -200px;
       top: 50px;
       border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(255,106,0,.18),
-        rgba(255,106,0,.04) 45%,
-        transparent 70%
-      );
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,106,0,.18),
+          rgba(255,106,0,.04) 45%,
+          transparent 70%
+        );
       filter: blur(20px);
+      pointer-events: none;
     }
 
     .hero-content {
@@ -210,7 +222,7 @@
 
     .hero-text {
       margin-top: 30px;
-      max-width: 650px;
+      max-width: 680px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.7;
@@ -299,11 +311,12 @@
       padding: 30px;
       min-height: 250px;
       border: 1px solid var(--border);
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.045),
-        rgba(255,255,255,.015)
-      );
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.015)
+        );
       border-radius: 15px;
       transition: .35s;
       position: relative;
@@ -419,7 +432,11 @@
     .project-visual {
       height: 250px;
       background:
-        radial-gradient(circle at 70% 30%, rgba(255,106,0,.25), transparent 25%),
+        radial-gradient(
+          circle at 70% 30%,
+          rgba(255,106,0,.25),
+          transparent 25%
+        ),
         linear-gradient(135deg,#111,#070707);
       display: flex;
       align-items: center;
@@ -472,7 +489,7 @@
       font-size: 14px;
     }
 
-    /* ================= TECH ================= */
+    /* ================= TECHNOLOGY ================= */
 
     .tech-list {
       margin-top: 50px;
@@ -488,11 +505,13 @@
       color: #ccc;
       font-size: 13px;
       background: #0c0c0c;
+      transition: .3s;
     }
 
     .tech:hover {
       border-color: var(--orange);
       color: white;
+      transform: translateY(-2px);
     }
 
     /* ================= ABOUT ================= */
@@ -514,10 +533,15 @@
       margin-top: 20px;
     }
 
+    .about-text strong {
+      color: white;
+    }
+
     .stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
+      margin-top: 60px;
     }
 
     .stat {
@@ -539,7 +563,7 @@
       margin-top: 5px;
     }
 
-    /* ================= CTA ================= */
+    /* ================= CONTACT ================= */
 
     .cta {
       text-align: center;
@@ -559,13 +583,121 @@
       letter-spacing: -3px;
       max-width: 850px;
       margin: auto;
+      line-height: 1.05;
     }
 
-    .cta p {
+    .cta > .container > p {
       color: var(--muted);
       margin: 25px auto 35px;
-      max-width: 550px;
+      max-width: 600px;
       line-height: 1.7;
+    }
+
+    /* ================= FORM ================= */
+
+    .contact-form-wrapper {
+      max-width: 760px;
+      margin: 50px auto 0;
+      text-align: left;
+    }
+
+    .contact-form {
+      padding: 35px;
+      background: rgba(15,15,15,.94);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 18px;
+      box-shadow:
+        0 25px 80px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.03);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 9px;
+      color: #e8e8e8;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .form-group label span {
+      color: #666;
+      font-weight: 400;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 16px;
+      background: #090909;
+      border: 1px solid #252525;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      transition: .3s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #555;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,106,0,.08);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #111;
+      color: white;
+    }
+
+    .form-submit {
+      width: 100%;
+      border: none;
+      padding: 16px 22px;
+      border-radius: 8px;
+      background: var(--orange);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .form-submit span {
+      font-size: 20px;
+      transition: .3s;
+    }
+
+    .form-submit:hover {
+      background: #ff8129;
+      box-shadow: 0 12px 35px rgba(255,106,0,.25);
+      transform: translateY(-2px);
+    }
+
+    .form-submit:hover span {
+      transform: translateX(5px);
     }
 
     /* ================= FOOTER ================= */
@@ -592,24 +724,31 @@
       color: white;
     }
 
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ================= MOBILE ================= */
 
-    @media(max-width: 850px) {
+    @media(max-width: 900px) {
 
       .nav-links {
         display: none;
       }
 
-      h1 {
-        letter-spacing: -3px;
-      }
-
       .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid {
@@ -617,63 +756,79 @@
         gap: 40px;
       }
 
-      .flow {
-        justify-content: flex-start;
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
       }
+
+    }
+
+    @media(max-width: 650px) {
 
       section {
         padding: 85px 0;
       }
-    }
-
-    @media(max-width: 550px) {
-
-      .hero {
-        min-height: 90vh;
-      }
 
       h1 {
         font-size: 55px;
+        letter-spacing: -3px;
       }
 
       .hero-text {
         font-size: 16px;
       }
 
-      .stats {
+      .services-grid,
+      .projects {
         grid-template-columns: 1fr;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        gap: 15px;
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-form {
+        padding: 22px;
+      }
+
+      .contact-form-wrapper {
+        margin-top: 35px;
       }
 
       .project-visual {
         height: 200px;
       }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
     }
 
-    /* ================= REVEAL ================= */
+    @media(max-width: 420px) {
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity .8s ease, transform .8s ease;
+      h1 {
+        font-size: 48px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
     }
 
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- ================= NAVBAR ================= -->
 
   <nav>
+
     <div class="container nav-inner">
 
       <a href="#" class="logo">
@@ -681,22 +836,32 @@
       </a>
 
       <div class="nav-links">
+
         <a href="#services">Services</a>
+
         <a href="#work">Work</a>
+
         <a href="#stack">Stack</a>
+
         <a href="#about">About</a>
-        <a href="#contact" class="nav-cta">Let's Talk</a>
+
+        <a href="#contact" class="nav-cta">
+          Let's Talk
+        </a>
+
       </div>
 
     </div>
+
   </nav>
 
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
 
   <header class="hero">
 
     <div class="hero-grid"></div>
+
     <div class="orb"></div>
 
     <div class="container">
@@ -704,31 +869,45 @@
       <div class="hero-content reveal">
 
         <div class="eyebrow">
+
           <span class="dot"></span>
+
           Available for AI Projects
+
         </div>
 
+
         <h1>
+
           Building
           <span>Intelligent</span>
           Systems.
+
         </h1>
 
+
         <p class="hero-text">
-          I'm Shanmuga Prasath, a freelance GenAI Architect building
-          AI agents, automation systems, RAG applications and
-          intelligent workflows that turn complex business processes
-          into scalable AI solutions.
+
+          I'm Shanmuga Prasath, a freelance GenAI Architect
+          building AI agents, automation systems, RAG
+          applications and intelligent workflows that turn
+          complex business processes into scalable AI solutions.
+
         </p>
+
 
         <div class="hero-buttons">
 
           <a href="#work" class="btn btn-primary">
+
             Explore My Work →
+
           </a>
 
           <a href="#contact" class="btn btn-secondary">
+
             Start a Project
+
           </a>
 
         </div>
@@ -740,7 +919,7 @@
   </header>
 
 
-  <!-- SERVICES -->
+  <!-- ================= SERVICES ================= -->
 
   <section id="services">
 
@@ -750,84 +929,151 @@
         Capabilities
       </div>
 
+
       <h2 class="section-title reveal">
+
         AI systems built for
         real-world execution.
+
       </h2>
 
+
       <p class="section-subtitle reveal">
+
         From the first prompt to production deployment,
         I design systems where AI doesn't just answer —
         it takes action.
+
       </p>
 
 
       <div class="services-grid">
 
+
         <div class="service reveal">
-          <div class="service-number">01 / AI</div>
-          <h3>AI Agents</h3>
+
+          <div class="service-number">
+            01 / AI
+          </div>
+
+          <h3>
+            AI Agents
+          </h3>
+
           <p>
             Intelligent agents capable of reasoning,
             using tools, accessing data and executing
             multi-step tasks autonomously.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
 
+
         <div class="service reveal">
-          <div class="service-number">02 / GENAI</div>
-          <h3>Generative AI</h3>
+
+          <div class="service-number">
+            02 / GENAI
+          </div>
+
+          <h3>
+            Generative AI
+          </h3>
+
           <p>
             Production-ready LLM applications,
             AI assistants and custom GenAI solutions
             designed around real business use cases.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
 
+
         <div class="service reveal">
-          <div class="service-number">03 / AUTOMATION</div>
-          <h3>AI Automation</h3>
+
+          <div class="service-number">
+            03 / AUTOMATION
+          </div>
+
+          <h3>
+            AI Automation
+          </h3>
+
           <p>
             End-to-end workflows that connect AI
             models, APIs, databases and business
             tools to eliminate repetitive work.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
 
+
         <div class="service reveal">
-          <div class="service-number">04 / KNOWLEDGE</div>
-          <h3>RAG Systems</h3>
+
+          <div class="service-number">
+            04 / KNOWLEDGE
+          </div>
+
+          <h3>
+            RAG Systems
+          </h3>
+
           <p>
             Private knowledge assistants that retrieve
             relevant information from documents and
             enterprise data before generating answers.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
 
+
         <div class="service reveal">
-          <div class="service-number">05 / INTEGRATION</div>
-          <h3>AI Integrations</h3>
+
+          <div class="service-number">
+            05 / INTEGRATION
+          </div>
+
+          <h3>
+            AI Integrations
+          </h3>
+
           <p>
             Connect AI systems with APIs, SaaS platforms,
             databases, CRMs and internal business tools.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
 
+
         <div class="service reveal">
-          <div class="service-number">06 / ARCHITECTURE</div>
-          <h3>AI Architecture</h3>
+
+          <div class="service-number">
+            06 / ARCHITECTURE
+          </div>
+
+          <h3>
+            AI Architecture
+          </h3>
+
           <p>
             Scalable AI system architecture covering
             models, orchestration, data, APIs,
             security and deployment.
           </p>
+
           <div class="service-glow"></div>
+
         </div>
+
 
       </div>
 
@@ -836,7 +1082,7 @@
   </section>
 
 
-  <!-- ARCHITECTURE -->
+  <!-- ================= ARCHITECTURE ================= -->
 
   <section class="architecture">
 
@@ -846,14 +1092,18 @@
         Architecture
       </div>
 
+
       <h2 class="section-title reveal">
         From prompt to action.
       </h2>
 
+
       <p class="section-subtitle reveal">
+
         A modern AI system is more than an LLM.
         Intelligence becomes valuable when it can
         access tools, data and execute actions.
+
       </p>
 
 
@@ -861,45 +1111,75 @@
 
         <div class="flow">
 
+
           <div class="node">
+
             <strong>User</strong>
+
             <small>Request</small>
+
           </div>
+
 
           <div class="arrow">→</div>
 
+
           <div class="node">
+
             <strong>AI Agent</strong>
+
             <small>Reasoning</small>
+
           </div>
+
 
           <div class="arrow">→</div>
 
+
           <div class="node">
+
             <strong>LLM</strong>
+
             <small>Intelligence</small>
+
           </div>
+
 
           <div class="arrow">→</div>
 
+
           <div class="node">
+
             <strong>Tools</strong>
+
             <small>APIs / Search</small>
+
           </div>
+
 
           <div class="arrow">→</div>
 
+
           <div class="node">
+
             <strong>Database</strong>
+
             <small>Knowledge</small>
+
           </div>
+
 
           <div class="arrow">→</div>
 
+
           <div class="node">
+
             <strong>Action</strong>
+
             <small>Execution</small>
+
           </div>
+
 
         </div>
 
@@ -910,7 +1190,7 @@
   </section>
 
 
-  <!-- PROJECTS -->
+  <!-- ================= PROJECTS ================= -->
 
   <section id="work">
 
@@ -920,17 +1200,22 @@
         Selected Work
       </div>
 
+
       <h2 class="section-title reveal">
         Systems, not demos.
       </h2>
 
+
       <p class="section-subtitle reveal">
+
         A selection of AI architectures designed around
         practical workflows and measurable business outcomes.
+
       </p>
 
 
       <div class="projects">
+
 
         <article class="project reveal">
 
@@ -938,23 +1223,32 @@
 
             <div class="mini-system">
 
-              <div class="mini-node">User</div>
+              <div class="mini-node">
+                User
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">AI Agent</div>
+              <div class="mini-node">
+                AI Agent
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">Tools</div>
+              <div class="mini-node">
+                Tools
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">Action</div>
+              <div class="mini-node">
+                Action
+              </div>
 
             </div>
 
           </div>
+
 
           <div class="project-content">
 
@@ -962,7 +1256,9 @@
               AI Agent
             </div>
 
-            <h3>Autonomous Business Agent</h3>
+            <h3>
+              Autonomous Business Agent
+            </h3>
 
             <p>
               An AI agent architecture capable of
@@ -981,23 +1277,32 @@
 
             <div class="mini-system">
 
-              <div class="mini-node">Docs</div>
+              <div class="mini-node">
+                Docs
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">Embeddings</div>
+              <div class="mini-node">
+                Embeddings
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">Vector DB</div>
+              <div class="mini-node">
+                Vector DB
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">LLM</div>
+              <div class="mini-node">
+                LLM
+              </div>
 
             </div>
 
           </div>
+
 
           <div class="project-content">
 
@@ -1005,7 +1310,9 @@
               RAG / GenAI
             </div>
 
-            <h3>Private Knowledge Assistant</h3>
+            <h3>
+              Private Knowledge Assistant
+            </h3>
 
             <p>
               A retrieval-augmented generation system
@@ -1024,23 +1331,32 @@
 
             <div class="mini-system">
 
-              <div class="mini-node">Trigger</div>
+              <div class="mini-node">
+                Trigger
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">AI</div>
+              <div class="mini-node">
+                AI
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">API</div>
+              <div class="mini-node">
+                API
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">CRM</div>
+              <div class="mini-node">
+                CRM
+              </div>
 
             </div>
 
           </div>
+
 
           <div class="project-content">
 
@@ -1048,7 +1364,9 @@
               Automation
             </div>
 
-            <h3>AI Lead Automation</h3>
+            <h3>
+              AI Lead Automation
+            </h3>
 
             <p>
               Intelligent lead processing that captures
@@ -1067,23 +1385,32 @@
 
             <div class="mini-system">
 
-              <div class="mini-node">User</div>
+              <div class="mini-node">
+                User
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">LLM</div>
+              <div class="mini-node">
+                LLM
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">API</div>
+              <div class="mini-node">
+                API
+              </div>
 
               <div class="mini-arrow">→</div>
 
-              <div class="mini-node">Response</div>
+              <div class="mini-node">
+                Response
+              </div>
 
             </div>
 
           </div>
+
 
           <div class="project-content">
 
@@ -1091,7 +1418,9 @@
               GenAI
             </div>
 
-            <h3>AI Application</h3>
+            <h3>
+              AI Application
+            </h3>
 
             <p>
               A custom AI application combining LLMs,
@@ -1103,6 +1432,7 @@
 
         </article>
 
+
       </div>
 
     </div>
@@ -1110,7 +1440,7 @@
   </section>
 
 
-  <!-- TECHNOLOGY -->
+  <!-- ================= TECHNOLOGY ================= -->
 
   <section id="stack">
 
@@ -1120,35 +1450,56 @@
         Technology
       </div>
 
+
       <h2 class="section-title reveal">
         The AI engineering stack.
       </h2>
 
+
       <p class="section-subtitle reveal">
+
         Tools and technologies used to design,
         build and deploy modern intelligent systems.
+
       </p>
 
 
       <div class="tech-list reveal">
 
         <span class="tech">Python</span>
+
         <span class="tech">OpenAI</span>
+
         <span class="tech">Claude</span>
+
         <span class="tech">Gemini</span>
+
         <span class="tech">LangChain</span>
+
         <span class="tech">LangGraph</span>
+
         <span class="tech">RAG</span>
+
         <span class="tech">Vector Databases</span>
+
         <span class="tech">AI Agents</span>
+
         <span class="tech">n8n</span>
+
         <span class="tech">Make</span>
+
         <span class="tech">FastAPI</span>
+
         <span class="tech">REST APIs</span>
+
         <span class="tech">PostgreSQL</span>
+
         <span class="tech">Supabase</span>
+
         <span class="tech">AWS</span>
+
         <span class="tech">Docker</span>
+
         <span class="tech">GitHub</span>
 
       </div>
@@ -1158,177 +1509,480 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- ================= ABOUT ================= -->
 
   <section id="about">
 
-    <div class="container about-grid">
+    <div class="container">
 
-      <div>
 
-        <div class="section-label reveal">
-          About
+      <div class="about-grid">
+
+
+        <div>
+
+          <div class="section-label reveal">
+            About
+          </div>
+
+
+          <h2 class="section-title reveal">
+
+            Engineering intelligence
+            into everyday work.
+
+          </h2>
+
         </div>
 
-        <h2 class="section-title reveal">
-          Engineering intelligence
-          into everyday work.
-        </h2>
+
+        <div class="about-text reveal">
+
+          <p>
+
+            I'm Shanmuga Prasath, a freelance GenAI Architect
+            focused on designing practical AI systems that
+            connect intelligence with real-world execution.
+
+          </p>
+
+
+          <p>
+
+            My work sits at the intersection of Generative AI,
+            automation, software engineering and cloud
+            architecture.
+
+          </p>
+
+
+          <p>
+
+            I don't build AI just to demonstrate what a model
+            can do. I build systems around the question:
+
+            <strong>
+              what should happen automatically after
+              the AI understands the problem?
+            </strong>
+
+          </p>
+
+        </div>
+
 
       </div>
 
-
-      <div class="about-text reveal">
-
-        <p>
-          I'm Shanmuga Prasath, a freelance GenAI Architect
-          focused on designing practical AI systems that
-          connect intelligence with real-world execution.
-        </p>
-
-        <p>
-          My work sits at the intersection of Generative AI,
-          automation, software engineering and cloud
-          architecture.
-        </p>
-
-        <p>
-          I don't build AI just to demonstrate what a model
-          can do. I build systems around the question:
-          <strong>what should happen automatically after
-          the AI understands the problem?</strong>
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="container" style="margin-top:60px;">
 
       <div class="stats">
 
+
         <div class="stat reveal">
-          <div class="stat-number">AI</div>
+
+          <div class="stat-number">
+            AI
+          </div>
+
           <div class="stat-label">
             Generative AI Systems
           </div>
+
         </div>
 
+
         <div class="stat reveal">
-          <div class="stat-number">∞</div>
+
+          <div class="stat-number">
+            ∞
+          </div>
+
           <div class="stat-label">
             Automation Possibilities
           </div>
+
         </div>
 
+
         <div class="stat reveal">
-          <div class="stat-number">24/7</div>
+
+          <div class="stat-number">
+            24/7
+          </div>
+
           <div class="stat-label">
             Intelligent Workflows
           </div>
+
         </div>
 
+
         <div class="stat reveal">
-          <div class="stat-number">01</div>
+
+          <div class="stat-number">
+            01
+          </div>
+
           <div class="stat-label">
             Architecture Mindset
           </div>
+
         </div>
 
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- CTA -->
+  <!-- ================= CONTACT ================= -->
 
   <section id="contact" class="cta">
 
     <div class="container">
 
+
       <div class="section-label reveal">
         Let's Build
       </div>
 
+
       <h2 class="reveal">
+
         Have a process that
         should be automated?
+
       </h2>
 
+
       <p class="reveal">
-        Let's turn your idea, workflow or business problem
-        into an intelligent AI system.
+
+        Tell me what you're trying to build.
+        I'll get back to you with the right AI approach.
+
       </p>
 
-      <div class="hero-buttons" style="justify-content:center;">
 
-        <!-- Replace email -->
+      <!-- CONTACT FORM -->
 
-        <a
-          href="mailto:your@email.com"
-          class="btn btn-primary"
+      <div class="contact-form-wrapper reveal">
+
+
+        <!--
+          IMPORTANT:
+          Replace YOUR_EMAIL@gmail.com with
+          Shanmuga's real email address.
+        -->
+
+        <form
+          action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+          method="POST"
+          class="contact-form"
         >
-          Start a Conversation →
-        </a>
 
-        <!-- Replace WhatsApp number -->
 
-        <a
-          href="https://wa.me/+919363353861"
-          target="_blank"
-          class="btn btn-secondary"
-        >
-          WhatsApp
-        </a>
+          <!-- FORMSUBMIT CONFIGURATION -->
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New AI Project Enquiry — Shanmuga Prasath"
+          />
+
+          <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+          />
+
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          />
+
+
+          <!--
+            OPTIONAL:
+            Replace with your actual website URL.
+
+            Example:
+            https://shanmugaprasath.com/thank-you.html
+          -->
+
+          <input
+            type="hidden"
+            name="_next"
+            value="https://yourwebsite.com/thank-you.html"
+          />
+
+
+          <!-- NAME -->
+
+          <div class="form-group">
+
+            <label for="name">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              autocomplete="name"
+              required
+            />
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@company.com"
+              autocomplete="email"
+              required
+            />
+
+          </div>
+
+
+          <!-- COMPANY -->
+
+          <div class="form-group">
+
+            <label for="company">
+
+              Company
+
+              <span>
+                (Optional)
+              </span>
+
+            </label>
+
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Company name"
+              autocomplete="organization"
+            />
+
+          </div>
+
+
+          <!-- SERVICE -->
+
+          <div class="form-group">
+
+            <label for="project">
+              What do you want to build?
+            </label>
+
+            <select
+              id="project"
+              name="project_type"
+              required
+            >
+
+              <option value="" disabled selected>
+                Select a service
+              </option>
+
+              <option value="AI Agent">
+                AI Agent
+              </option>
+
+              <option value="Generative AI Application">
+                Generative AI Application
+              </option>
+
+              <option value="AI Automation">
+                AI Automation
+              </option>
+
+              <option value="RAG System">
+                RAG / Knowledge Assistant
+              </option>
+
+              <option value="AI Integration">
+                AI API / SaaS Integration
+              </option>
+
+              <option value="AI Architecture">
+                AI Architecture / Consulting
+              </option>
+
+              <option value="Other">
+                Something Else
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- BUDGET -->
+
+          <div class="form-group">
+
+            <label for="budget">
+              Estimated Budget
+            </label>
+
+            <select
+              id="budget"
+              name="budget"
+            >
+
+              <option value="" disabled selected>
+                Select a range
+              </option>
+
+              <option value="Under $500">
+                Under $500
+              </option>
+
+              <option value="$500 - $1,000">
+                $500 – $1,000
+              </option>
+
+              <option value="$1,000 - $3,000">
+                $1,000 – $3,000
+              </option>
+
+              <option value="$3,000 - $5,000">
+                $3,000 – $5,000
+              </option>
+
+              <option value="$5,000+">
+                $5,000+
+              </option>
+
+              <option value="Not sure">
+                Not sure yet
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- PROJECT DETAILS -->
+
+          <div class="form-group">
+
+            <label for="message">
+              Tell me about your project
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="What problem are you trying to solve? What would you like the AI system to do?"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="form-submit"
+          >
+
+            Send Project Enquiry
+
+            <span>→</span>
+
+          </button>
+
+
+        </form>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
 
     <div class="container footer-inner">
 
+
       <div>
-        © 2026 Shanmuga Prasath. All rights reserved.
+
+        © 2026 Shanmuga Prasath.
+        All rights reserved.
+
       </div>
+
 
       <div class="footer-links">
 
-        <!-- Replace links -->
+        <!-- Replace # with real profiles -->
 
-        <a href="#" target="_blank">
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           LinkedIn
         </a>
 
-        <a href="#" target="_blank">
+
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           GitHub
         </a>
 
-        <a href="mailto:your@email.com">
+
+        <!-- Replace email -->
+
+        <a href="mailto:YOUR_EMAIL@gmail.com">
           Email
         </a>
 
       </div>
+
 
     </div>
 
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
 
+    /* Scroll reveal animation */
+
     const observer = new IntersectionObserver(
+
       entries => {
 
         entries.forEach(entry => {
@@ -1337,14 +1991,18 @@
 
             entry.target.classList.add("show");
 
+            observer.unobserve(entry.target);
+
           }
 
         });
 
       },
+
       {
         threshold: 0.12
       }
+
     );
 
 
@@ -1357,26 +2015,35 @@
       });
 
 
-    /* Mouse movement glow */
+    /* Smooth navigation */
 
-    document.addEventListener("mousemove", e => {
+    document
+      .querySelectorAll('a[href^="#"]')
+      .forEach(link => {
 
-      const x = e.clientX;
-      const y = e.clientY;
+        link.addEventListener("click", function(e) {
 
-      document.documentElement.style.setProperty(
-        "--mouse-x",
-        `${x}px`
-      );
+          const target = document.querySelector(
+            this.getAttribute("href")
+          );
 
-      document.documentElement.style.setProperty(
-        "--mouse-y",
-        `${y}px`
-      );
+          if (target) {
 
-    });
+            e.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth"
+            });
+
+          }
+
+        });
+
+      });
 
   </script>
 
+
 </body>
 </html>
+```
